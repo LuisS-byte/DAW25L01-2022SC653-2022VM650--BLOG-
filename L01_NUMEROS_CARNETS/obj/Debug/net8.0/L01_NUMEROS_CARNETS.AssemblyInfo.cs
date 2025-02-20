@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("L01_NUMEROS_CARNETS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88d73c2ec4889d66e32e81e4254fa46ec4a5d813")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6a06c9d43d979bdf6989e06385b014566e4bab8")]
 [assembly: System.Reflection.AssemblyProductAttribute("L01_NUMEROS_CARNETS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("L01_NUMEROS_CARNETS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

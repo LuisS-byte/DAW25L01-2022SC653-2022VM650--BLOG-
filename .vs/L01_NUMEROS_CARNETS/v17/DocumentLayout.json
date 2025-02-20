@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Models\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:L01_NUMEROS_CARNETS\\Models\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|d:\\cursosrealizados\\github\\l01_numeros_carnets\\l01_numeros_carnets\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|solutionrelative:l01_numeros_carnets\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|d:\\cursosrealizados\\github\\l01_numeros_carnets\\l01_numeros_carnets\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|solutionrelative:l01_numeros_carnets\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|d:\\cursosrealizados\\github\\l01_numeros_carnets\\l01_numeros_carnets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|solutionrelative:l01_numeros_carnets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|d:\\cursosrealizados\\github\\l01_numeros_carnets\\l01_numeros_carnets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|solutionrelative:l01_numeros_carnets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|d:\\cursosrealizados\\github\\l01_numeros_carnets\\l01_numeros_carnets\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FD07E5F-1195-4A73-B6D6-8B1F5D0618E9}|L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS.csproj|solutionrelative:l01_numeros_carnets\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,12 +47,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "L01_NUMEROS_CARNETS\\Models\\Usuario.cs",
+              "ToolTip": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Models\\Usuario.cs",
+              "RelativeToolTip": "L01_NUMEROS_CARNETS\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T23:25:32.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "L01_NUMEROS_CARNETS\\Controllers\\UsuariosController.cs",
+              "ToolTip": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "L01_NUMEROS_CARNETS\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T23:24:15.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\appsettings.json",
+              "RelativeDocumentMoniker": "L01_NUMEROS_CARNETS\\appsettings.json",
+              "ToolTip": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\appsettings.json",
+              "RelativeToolTip": "L01_NUMEROS_CARNETS\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-20T23:21:58.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Program.cs",
+              "RelativeDocumentMoniker": "L01_NUMEROS_CARNETS\\Program.cs",
+              "ToolTip": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Program.cs",
+              "RelativeToolTip": "L01_NUMEROS_CARNETS\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T23:21:28.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "L01_NUMEROS_CARNETS\\Models\\AppDbContext.cs",
               "ToolTip": "D:\\CursosRealizados\\GitHub\\L01_NUMEROS_CARNETS\\L01_NUMEROS_CARNETS\\Models\\AppDbContext.cs",
               "RelativeToolTip": "L01_NUMEROS_CARNETS\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-20T23:19:58.065Z",
               "EditorCaption": ""
