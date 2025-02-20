@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\L01_NUMEROS_CARNETS.props" />
+</Project>
