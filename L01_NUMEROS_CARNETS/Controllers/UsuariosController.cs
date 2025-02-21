@@ -1,7 +1,5 @@
 ﻿using L01_NUMEROS_CARNETS.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace L01_NUMEROS_CARNETS.Controllers
 {
@@ -14,78 +12,100 @@ namespace L01_NUMEROS_CARNETS.Controllers
         {
             _context = context;
         }
-        
+
         [HttpGet]
-        [Route("GetAllUsuarios")]
-        public IActionResult GetAllUsuarios()
+        [Route("ListaUsuario")]
+        public IActionResult ListaUsuario()
         {
-            var usuarios = _context.Usuarios.ToList();
+            var usuarios = (from u in _context.Usuarios
+                            select u).ToList();
             return Ok(usuarios);
         }
 
         [HttpPost]
-        [Route("CreateUsuario")]
-        public IActionResult CreateUsuario([FromBody] Usuario usuario)
+        [Route("CrearUsuario")]
+        public IActionResult CrearUsuario([FromBody] Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
             return Ok(usuario);
         }
 
-        
-
         [HttpPut]
-        [Route("UpdateUsuario/{id}")]
-        public IActionResult UpdateUsuario(int id, [FromBody] Usuario usuarioActualizado)
+        [Route("ActualizarUsuario/{id}")]
+        public IActionResult ActualizarUsuario(int id, [FromBody] Usuario usuarioActualizado)
         {
-            var usuario = _context.Usuarios.FirstOrDefault(u => u.UsuarioId == id);
-            if (usuario == null) return NotFound();
+            var dataDB = (from u in _context.Usuarios
+                          where u.UsuarioId == id
+                          select u).FirstOrDefault();
+            if (dataDB == null) return NotFound();
 
-            usuario.NombreUsuario = usuarioActualizado.NombreUsuario ?? usuario.NombreUsuario;
-            usuario.Clave = usuarioActualizado.Clave ?? usuario.Clave;
-            usuario.Nombre = usuarioActualizado.Nombre ?? usuario.Nombre;
-            usuario.Apellido = usuarioActualizado.Apellido ?? usuario.Apellido;
-            usuario.RolId = usuarioActualizado.RolId ?? usuario.RolId;
+            dataDB.NombreUsuario = usuarioActualizado.NombreUsuario ?? dataDB.NombreUsuario;
+            dataDB.Clave = usuarioActualizado.Clave ?? dataDB.Clave;
+            dataDB.Nombre = usuarioActualizado.Nombre ?? dataDB.Nombre;
+            dataDB.Apellido = usuarioActualizado.Apellido ?? dataDB.Apellido;
+            dataDB.RolId = usuarioActualizado.RolId ?? dataDB.RolId;
 
             _context.SaveChanges();
-            return Ok(usuario);
+            return Ok(dataDB);
         }
 
         [HttpDelete]
-        [Route("DeleteUsuario/{id}")]
-        public IActionResult DeleteUsuario(int id)
+        [Route("EliminarUsaurio/{id}")]
+        public IActionResult EliminarUsaurio(int id)
         {
-            var usuario = _context.Usuarios.FirstOrDefault(u => u.UsuarioId == id);
-            if (usuario == null) return NotFound();
+            var dataDB = (from u in _context.Usuarios
+                          where u.UsuarioId == id
+                          select u).FirstOrDefault();
+            if (dataDB == null) return NotFound();
 
-            _context.Usuarios.Remove(usuario);
+            _context.Usuarios.Remove(dataDB);
             _context.SaveChanges();
             return Ok(200);
         }
-
-        
 
         [HttpGet]
         [Route("GetUsuariosPorRol/{rolId}")]
         public IActionResult GetUsuariosPorRol(int rolId)
         {
-            var usuarios = _context.Usuarios
-                                   .Where(u => u.RolId == rolId)
-                                   .ToList();
-            return Ok(usuarios);
+            var dataDB = (from u in _context.Usuarios
+                          where u.RolId == rolId
+                          select u).ToList();
+            return Ok(dataDB);
         }
-
-
-
 
         [HttpGet]
         [Route("GetUsuariosPorNombreApellido/{nombre}/{apellido}")]
         public IActionResult GetUsuariosPorNombreApellido(string nombre, string apellido)
         {
-            var usuarios = _context.Usuarios
-                                   .Where(u => u.Nombre.Contains(nombre) && u.Apellido.Contains(apellido))
-                                   .ToList();
-            return Ok(usuarios);
+            var dataDB = (from u in _context.Usuarios
+                          where u.Nombre.Contains(nombre) && u.Apellido.Contains(apellido)
+                          select u).ToList();
+            return Ok(dataDB);
+        }
+
+        [HttpGet]
+        [Route("TopUsuarios/{n}")]
+        public IActionResult GetTopUsuarios(int n)
+        {
+            var topUsuarios = (from u in _context.Usuarios
+                               join c in _context.Comentarios on u.UsuarioId equals c.UsuarioId
+                               group c by new { u.UsuarioId, u.Nombre, u.Apellido } into grouped
+                               orderby grouped.Count() descending
+                               select new
+                               {
+                                   UsuarioId = grouped.Key.UsuarioId,
+                                   Nombre = grouped.Key.Nombre,
+                                   Apellido = grouped.Key.Apellido,
+                                   CantidadComentarios = grouped.Count()
+                               }).Take(n).ToList();
+
+            if (topUsuarios.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(topUsuarios);
         }
     }
 }

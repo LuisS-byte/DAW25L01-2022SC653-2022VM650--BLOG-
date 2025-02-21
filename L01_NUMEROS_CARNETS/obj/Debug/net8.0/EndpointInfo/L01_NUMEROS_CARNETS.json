@@ -5,7 +5,138 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Comentarios/GetAllComentarios": {
+    "/api/Calificacion/ListarCalificaciones": {
+      "get": {
+        "tags": [
+          "Calificacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Calificacion/ObtenerPorPublicacion/{publicacionId}": {
+      "get": {
+        "tags": [
+          "Calificacion"
+        ],
+        "parameters": [
+          {
+            "name": "publicacionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Calificacion/AgregarCalificacion": {
+      "post": {
+        "tags": [
+          "Calificacion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calificacione"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calificacione"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calificacione"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Calificacion/ActualizarCalificacion/{id}": {
+      "put": {
+        "tags": [
+          "Calificacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calificacione"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calificacione"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calificacione"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Calificacion/EliminarCalificacion/{id}": {
+      "delete": {
+        "tags": [
+          "Calificacion"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comentarios/ListaComentarios": {
       "get": {
         "tags": [
           "Comentarios"
@@ -17,7 +148,7 @@
         }
       }
     },
-    "/api/Comentarios/CreateComentario": {
+    "/api/Comentarios/CrearComentario": {
       "post": {
         "tags": [
           "Comentarios"
@@ -48,7 +179,7 @@
         }
       }
     },
-    "/api/Comentarios/UpdateComentario/{id}": {
+    "/api/Comentarios/ActualizarComentario/{id}": {
       "put": {
         "tags": [
           "Comentarios"
@@ -136,7 +267,7 @@
         }
       }
     },
-    "/api/Usuarios/GetAllUsuarios": {
+    "/api/Usuarios/ListaUsuario": {
       "get": {
         "tags": [
           "Usuarios"
@@ -148,7 +279,7 @@
         }
       }
     },
-    "/api/Usuarios/CreateUsuario": {
+    "/api/Usuarios/CrearUsuario": {
       "post": {
         "tags": [
           "Usuarios"
@@ -179,7 +310,7 @@
         }
       }
     },
-    "/api/Usuarios/UpdateUsuario/{id}": {
+    "/api/Usuarios/ActualizarUsuario/{id}": {
       "put": {
         "tags": [
           "Usuarios"
@@ -221,7 +352,7 @@
         }
       }
     },
-    "/api/Usuarios/DeleteUsuario/{id}": {
+    "/api/Usuarios/EliminarUsaurio/{id}": {
       "delete": {
         "tags": [
           "Usuarios"
@@ -297,6 +428,29 @@
         }
       }
     },
+    "/api/Usuarios/TopUsuarios/{n}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -339,6 +493,31 @@
   },
   "components": {
     "schemas": {
+      "Calificacione": {
+        "type": "object",
+        "properties": {
+          "calificacionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "publicacionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "calificacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Comentario": {
         "type": "object",
         "properties": {

@@ -1,7 +1,6 @@
 ﻿using L01_NUMEROS_CARNETS.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace L01_NUMEROS_CARNETS.Controllers
 {
@@ -17,82 +16,67 @@ namespace L01_NUMEROS_CARNETS.Controllers
 
         [HttpGet]
         [Route("ListaComentarios")]
-        public IActionResult ListaComentarios()
+        public async Task<IActionResult> ListaComentarios()
         {
-            var comentarios = (from c in _context.Comentarios
-                               select c).ToList();
-            return Ok(comentarios);
+            var dataDB = await (from c in _context.Comentarios select c).ToListAsync();
+            return Ok(dataDB);
         }
-
 
         [HttpPost]
         [Route("CrearComentario")]
-        public IActionResult CrearComentario([FromBody] Comentario comentario)
+        public async Task<IActionResult> CrearComentario([FromBody] Comentario comentario)
         {
             //el id no es necesario
-            //lo hicismo asi ya que nos daba error 
+            //lo hicimos asi ya que nos daba error 
             /*
              SqlException: No se puede insertar un valor explícito en la columna de identidad de la tabla 'comentarios' cuando IDENTITY_INSERT es OFF.
             */
             // y no queriamos modificar la base de datos ni las propiedades de ellas
             //por esa manera lo hicimos de la siguiente manera
-            _context.Comentarios.Add(new Comentario
+            await _context.Comentarios.AddAsync(new Comentario
             {
                 PublicacionId = comentario.PublicacionId,
                 Comentario1 = comentario.Comentario1,
                 UsuarioId = comentario.UsuarioId
             });
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return Ok(comentario);
         }
 
-
         [HttpPut]
-        [Route("UpdateComentario/{id}")]
-        public IActionResult UpdateComentario(int id, [FromBody] Comentario comentarioActualizado)
+        [Route("ActualizarComentario/{id}")]
+        public async Task<IActionResult> ActualizarComentario(int id, [FromBody] Comentario comentarioActualizado)
         {
-            var comentario = (from c in _context.Comentarios
-                              where c.CometarioId == id
-                              select c).FirstOrDefault();
-            if (comentario == null) return NotFound();
+            var dataDB = await (from c in _context.Comentarios where c.CometarioId == id select c).FirstOrDefaultAsync();
+            if (dataDB == null) return NotFound();
 
-            comentario.PublicacionId = comentarioActualizado.PublicacionId ?? comentario.PublicacionId;
-            comentario.Comentario1 = comentarioActualizado.Comentario1 ?? comentario.Comentario1;
-            comentario.UsuarioId = comentarioActualizado.UsuarioId ?? comentario.UsuarioId;
+            dataDB.PublicacionId = comentarioActualizado.PublicacionId ?? dataDB.PublicacionId;
+            dataDB.Comentario1 = comentarioActualizado.Comentario1 ?? dataDB.Comentario1;
+            dataDB.UsuarioId = comentarioActualizado.UsuarioId ?? dataDB.UsuarioId;
 
-            _context.SaveChanges();
-            return Ok(comentario);
+            await _context.SaveChangesAsync();
+            return Ok(dataDB);
         }
 
         [HttpDelete]
         [Route("DeleteComentario/{id}")]
-        public IActionResult DeleteComentario(int id)
+        public async Task<IActionResult> DeleteComentario(int id)
         {
-            var comentario = (from c in _context.Comentarios
-                              where c.CometarioId == id
-                              select c).FirstOrDefault();
-            if (comentario == null) return NotFound();
+            var dataDB = await (from c in _context.Comentarios where c.CometarioId == id select c).FirstOrDefaultAsync();
+            if (dataDB == null) return NotFound();
 
-            _context.Comentarios.Remove(comentario);
-            _context.SaveChanges();
+            _context.Comentarios.Remove(dataDB);
+            await _context.SaveChangesAsync();
             return Ok(200);
         }
 
-
-
-
-
-
-
         [HttpGet]
         [Route("GetComentariosPorUsuario/{usuarioId}")]
-        public IActionResult GetComentariosPorUsuario(int usuarioId)
+        public async Task<IActionResult> GetComentariosPorUsuario(int usuarioId)
         {
-            var comentarios = (from c in _context.Comentarios
-                               where c.UsuarioId == usuarioId
-                               select c).ToList();
-            return Ok(comentarios);
+            var dataDB = await (from c in _context.Comentarios where c.UsuarioId == usuarioId select c).ToListAsync();
+            return Ok(dataDB);
         }
     }
 }
