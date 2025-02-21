@@ -13,7 +13,6 @@ namespace L01_NUMEROS_CARNETS.Controllers
         {
             _context = context;
         }
-
         [HttpGet]
         [Route("ListarCalificaciones")]
         public IActionResult ListarCalificaciones()
