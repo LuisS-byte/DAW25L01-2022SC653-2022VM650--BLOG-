@@ -1,0 +1,139 @@
+[
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "CreateUsuario",
+    "RelativePath": "api/Usuarios/CreateUsuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "L01_NUMEROS_CARNETS.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "DeleteUsuario",
+    "RelativePath": "api/Usuarios/DeleteUsuario/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "GetAllUsuarios",
+    "RelativePath": "api/Usuarios/GetAllUsuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/Usuarios/GetUsuario/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "GetUsuariosPorNombreApellido",
+    "RelativePath": "api/Usuarios/GetUsuariosPorNombreApellido/{nombre}/{apellido}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "apellido",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "GetUsuariosPorRol",
+    "RelativePath": "api/Usuarios/GetUsuariosPorRol/{rolId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rolId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
+    "Method": "UpdateUsuario",
+    "RelativePath": "api/Usuarios/UpdateUsuario/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "usuarioActualizado",
+        "Type": "L01_NUMEROS_CARNETS.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[L01_NUMEROS_CARNETS.WeatherForecast, L01_NUMEROS_CARNETS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
