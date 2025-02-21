@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Usuarios/GetAllUsuarios": {
+    "/api/Comentarios/GetAllComentarios": {
       "get": {
         "tags": [
-          "Usuarios"
+          "Comentarios"
         ],
         "responses": {
           "200": {
@@ -17,10 +17,41 @@
         }
       }
     },
-    "/api/Usuarios/GetUsuario/{id}": {
-      "get": {
+    "/api/Comentarios/CreateComentario": {
+      "post": {
         "tags": [
-          "Usuarios"
+          "Comentarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comentario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comentario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comentario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comentarios/UpdateComentario/{id}": {
+      "put": {
+        "tags": [
+          "Comentarios"
         ],
         "parameters": [
           {
@@ -32,6 +63,83 @@
               "format": "int32"
             }
           }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comentario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comentario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Comentario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comentarios/DeleteComentario/{id}": {
+      "delete": {
+        "tags": [
+          "Comentarios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comentarios/GetComentariosPorUsuario/{usuarioId}": {
+      "get": {
+        "tags": [
+          "Comentarios"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/GetAllUsuarios": {
+      "get": {
+        "tags": [
+          "Usuarios"
         ],
         "responses": {
           "200": {
@@ -64,36 +172,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Usuarios/GetUsuariosPorNombreApellido/{nombre}/{apellido}": {
-      "get": {
-        "tags": [
-          "Usuarios"
-        ],
-        "parameters": [
-          {
-            "name": "nombre",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "apellido",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -189,6 +267,36 @@
         }
       }
     },
+    "/api/Usuarios/GetUsuariosPorNombreApellido/{nombre}/{apellido}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apellido",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -231,6 +339,30 @@
   },
   "components": {
     "schemas": {
+      "Comentario": {
+        "type": "object",
+        "properties": {
+          "cometarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "publicacionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "comentario1": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Usuario": {
         "type": "object",
         "properties": {

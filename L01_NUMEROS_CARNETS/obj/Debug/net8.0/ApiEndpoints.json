@@ -1,5 +1,84 @@
 [
   {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.ComentariosController",
+    "Method": "CreateComentario",
+    "RelativePath": "api/Comentarios/CreateComentario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comentario",
+        "Type": "L01_NUMEROS_CARNETS.Models.Comentario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.ComentariosController",
+    "Method": "DeleteComentario",
+    "RelativePath": "api/Comentarios/DeleteComentario/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.ComentariosController",
+    "Method": "GetAllComentarios",
+    "RelativePath": "api/Comentarios/GetAllComentarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.ComentariosController",
+    "Method": "GetComentariosPorUsuario",
+    "RelativePath": "api/Comentarios/GetComentariosPorUsuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.ComentariosController",
+    "Method": "UpdateComentario",
+    "RelativePath": "api/Comentarios/UpdateComentario/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "comentarioActualizado",
+        "Type": "L01_NUMEROS_CARNETS.Models.Comentario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
     "Method": "CreateUsuario",
     "RelativePath": "api/Usuarios/CreateUsuario",
@@ -39,22 +118,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "L01_NUMEROS_CARNETS.Controllers.UsuariosController",
-    "Method": "GetUsuario",
-    "RelativePath": "api/Usuarios/GetUsuario/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {
